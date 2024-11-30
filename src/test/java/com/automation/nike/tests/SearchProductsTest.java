@@ -114,5 +114,18 @@ public class SearchProductsTest extends BaseTest{
     }
 
 
+    @Test
+    public void SearchProductsAirJordan1Test() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Air Jordan 1");
 
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Air Jordan 1") ||results.contains("Jordan 1") ), "Product: " + product + " does not contain Air Jordan 1");
+            product++;
+        }
+
+    }
 }
