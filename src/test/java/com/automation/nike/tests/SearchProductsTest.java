@@ -28,7 +28,7 @@ public class SearchProductsTest extends BaseTest{
         searchProductsPage = new SearchProductsPage(driver);
         searchProductsPage.searchProducts("Air Max");
 
-        Thread.sleep(5000);
+        Thread.sleep(5000);//
 
         int product = 1;
         for(String results : searchProductsPage.getSearchResults()){
