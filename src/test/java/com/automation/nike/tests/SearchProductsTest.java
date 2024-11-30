@@ -28,7 +28,7 @@ public class SearchProductsTest extends BaseTest{
         searchProductsPage = new SearchProductsPage(driver);
         searchProductsPage.searchProducts("Air Max");
 
-        Thread.sleep(5000);
+        Thread.sleep(5000);//
 
         int product = 1;
         for(String results : searchProductsPage.getSearchResults()){
@@ -175,4 +175,53 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
+
+    @Test
+    public void SearchProductsTowelsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Towels");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Towels") ||results.contains("Towel") ), "Product: " + product + " does not contain Towels");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsSocksTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Socks");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Socks") ||results.contains("Sock") ), "Product: " + product + " does not contain Socks");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsHoodiesTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Hoodies");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Hoodie") || results.contains("Fleece") || results.contains("Jacket")  ),
+                    "Product: " + product + " does not contain Hoodie");
+            product++;
+        }
+
+    }
+
 }
+
+
