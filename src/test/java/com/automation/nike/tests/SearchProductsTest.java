@@ -107,8 +107,55 @@ public class SearchProductsTest extends BaseTest{
 
         int product = 1;
         for(String results : searchProductsPage.getSearchResults()){
-            Assert.assertTrue(results.contains("Cleats") , "Product: " + product + " does not contain Backpack");
+            Assert.assertTrue(results.contains("Cleats") , "Product: " + product + " does not contain Cleats");
             product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsBlazerTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Blazer");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue(results.contains("Blazer") , "Product: " + product + " does not contain Blazer");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsBagsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Bags");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Bags") || results.contains("Backpack") || results.contains("Bag")),
+                    "Product: " + product + " does not contain Bags");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsConverseTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Converse");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Converse") || results.contains("Chuck Taylor") || results.contains("Converse Chuck")),
+                    "Product: " + product + " does not contain Converse");
+            product++;//
         }
 
     }
