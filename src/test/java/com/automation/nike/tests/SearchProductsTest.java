@@ -222,6 +222,22 @@ public class SearchProductsTest extends BaseTest{
 
     }
 
+    @Test
+    public void SearchProductsLeggingsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Leggings");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Leggings") || results.contains("Flared") || results.contains("Paneled")  ),
+                    "Product: " + product + " does not contain Leggings");
+            product++;
+        }
+
+    }
+
 }
 
 
