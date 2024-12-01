@@ -238,6 +238,42 @@ public class SearchProductsTest extends BaseTest{
 
     }
 
+    @Test
+    public void SearchProductsWomenShortsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Women Shorts");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Women's") && results.contains("Shorts")),
+                    "Product: " + product + " does not contain WomenShorts");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsMenShortsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Men Shorts");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Men's") && results.contains("Shorts")),
+                    "Product: " + product + " does not contain MenShorts");
+            product++;
+        }
+
+    }
+
+
+
+
+
 }
 
 
