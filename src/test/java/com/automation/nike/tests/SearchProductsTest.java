@@ -22,13 +22,13 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
-
+//Jamie
     @Test
     public void SearchProductsAirMaxTest() throws InterruptedException {
         searchProductsPage = new SearchProductsPage(driver);
         searchProductsPage.searchProducts("Air Max");
 
-        Thread.sleep(5000);
+        Thread.sleep(5000);//
 
         int product = 1;
         for(String results : searchProductsPage.getSearchResults()){
@@ -52,7 +52,7 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
-
+//Juanita
     @Test
     public void SearchProductsAirForceTest() throws InterruptedException {
         searchProductsPage = new SearchProductsPage(driver);
@@ -107,8 +107,55 @@ public class SearchProductsTest extends BaseTest{
 
         int product = 1;
         for(String results : searchProductsPage.getSearchResults()){
-            Assert.assertTrue(results.contains("Cleats") , "Product: " + product + " does not contain Backpack");
+            Assert.assertTrue(results.contains("Cleats") , "Product: " + product + " does not contain Cleats");
             product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsBlazerTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Blazer");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue(results.contains("Blazer") , "Product: " + product + " does not contain Blazer");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsBagsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Bags");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Bags") || results.contains("Backpack") || results.contains("Bag")),
+                    "Product: " + product + " does not contain Bags");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsConverseTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Converse");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Converse") || results.contains("Chuck Taylor") || results.contains("Converse Chuck")),
+                    "Product: " + product + " does not contain Converse");
+            product++;//
         }
 
     }
@@ -128,4 +175,106 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
+
+    @Test
+    public void SearchProductsTowelsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Towels");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Towels") ||results.contains("Towel") ), "Product: " + product + " does not contain Towels");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsSocksTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Socks");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Socks") ||results.contains("Sock") ), "Product: " + product + " does not contain Socks");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsHoodiesTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Hoodies");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Hoodie") || results.contains("Fleece") || results.contains("Jacket")  ),
+                    "Product: " + product + " does not contain Hoodie");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsLeggingsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Leggings");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Leggings") || results.contains("Flared") || results.contains("Paneled")  ),
+                    "Product: " + product + " does not contain Leggings");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsWomenShortsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Women Shorts");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Women's") && results.contains("Shorts")),
+                    "Product: " + product + " does not contain WomenShorts");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsMenShortsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Men Shorts");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Men's") && results.contains("Shorts")),
+                    "Product: " + product + " does not contain MenShorts");
+            product++;
+        }
+
+    }
+
+
+
+
+    //Negus
+
 }
+
+
