@@ -22,7 +22,7 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
-
+//Jamie
     @Test
     public void SearchProductsAirMaxTest() throws InterruptedException {
         searchProductsPage = new SearchProductsPage(driver);
@@ -52,7 +52,7 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
-
+//Juanita
     @Test
     public void SearchProductsAirForceTest() throws InterruptedException {
         searchProductsPage = new SearchProductsPage(driver);
@@ -201,6 +201,70 @@ public class SearchProductsTest extends BaseTest{
         int product = 1;
         for(String results : searchProductsPage.getSearchResults()){
             Assert.assertTrue((results.contains("Socks") ||results.contains("Sock") ), "Product: " + product + " does not contain Socks");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsHoodiesTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Hoodies");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Hoodie") || results.contains("Fleece") || results.contains("Jacket")  ),
+                    "Product: " + product + " does not contain Hoodie");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsLeggingsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Leggings");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Leggings") || results.contains("Flared") || results.contains("Paneled")  ),
+                    "Product: " + product + " does not contain Leggings");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsWomenShortsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Women Shorts");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Women's") && results.contains("Shorts")),
+                    "Product: " + product + " does not contain WomenShorts");
+            product++;
+        }
+
+    }
+
+    @Test
+    public void SearchProductsMenShortsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Men Shorts");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Men's") && results.contains("Shorts")),
+                    "Product: " + product + " does not contain MenShorts");
             product++;
         }
 
