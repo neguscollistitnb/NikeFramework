@@ -22,7 +22,7 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
-
+//Jamie
     @Test
     public void SearchProductsAirMaxTest() throws InterruptedException {
         searchProductsPage = new SearchProductsPage(driver);
