@@ -29,7 +29,6 @@ public class SearchProductsPage {
             WebElement searchResults = driver.findElement(searchResultsBy);
             values.add(searchResults.getText());
         }
-
         return values;
     }
 }

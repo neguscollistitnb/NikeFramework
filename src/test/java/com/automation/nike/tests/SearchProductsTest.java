@@ -270,10 +270,6 @@ public class SearchProductsTest extends BaseTest{
 
     }
 
-
-
-
-
 }
 
 
