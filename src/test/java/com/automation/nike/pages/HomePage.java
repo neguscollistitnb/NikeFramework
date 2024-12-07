@@ -18,4 +18,10 @@ public class HomePage {
         WebElement jordanHeader = driver.findElement(jordanHeaderBy);
         return jordanHeader.isDisplayed();
     }
+
+    public void clickOnCyberMonday(){
+        By cyberMondayLinkBy = By.xpath("//a[text()='Cyber Monday']");
+        WebElement cyberMondayLink = driver.findElement(cyberMondayLinkBy);
+        cyberMondayLink.click();
+    }
 }
