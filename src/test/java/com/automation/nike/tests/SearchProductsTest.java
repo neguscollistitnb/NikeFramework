@@ -52,7 +52,7 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
-
+//Juanita
     @Test
     public void SearchProductsAirForceTest() throws InterruptedException {
         searchProductsPage = new SearchProductsPage(driver);
@@ -269,6 +269,11 @@ public class SearchProductsTest extends BaseTest{
         }
 
     }
+
+
+
+
+    //Negus
 
 }
 
