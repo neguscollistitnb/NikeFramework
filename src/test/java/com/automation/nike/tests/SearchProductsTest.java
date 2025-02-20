@@ -270,10 +270,23 @@ public class SearchProductsTest extends BaseTest{
 
     }
 
+    @Test
+    public void SearchProductsMensShirtsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Men T-Shirts");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Men's") || results.contains("T-Shirts") || results.contains("Vest") || results.contains("Sweater")),
+                    "Product: " + product + " does not contain Men's T-Shirts");
+            product++;
+        }
+
+    }
 
 
-
-    //Negus
 
 }
 
