@@ -24,4 +24,11 @@ public class HomePage {
         WebElement cyberMondayLink = driver.findElement(cyberMondayLinkBy);
         cyberMondayLink.click();
     }
+
+    public void clickOnFindAStoreLink(){
+        By findAStoreLinkBy = By.xpath("//a[@aria-label='Find a Store']");
+        WebElement findAStoreLink = driver.findElement(findAStoreLinkBy);
+        findAStoreLink.click();
+    }
+
 }
