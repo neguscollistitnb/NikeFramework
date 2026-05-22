@@ -286,6 +286,46 @@ public class SearchProductsTest extends BaseTest{
 
     }
 
+    @Test
+    public void SearchProductsNikeZoom () throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Zoom");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            Assert.assertTrue((results.contains("Nike") || results.contains("Zoom")),
+                    "Product: " + product + " does not contain Hats");
+            product++;
+        }
+
+
+    }
+
+    @Test
+    public void SearchProductsNikeAirMax90Test() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Nike Air Max 90");
+
+        // keep same wait style as other tests in this file
+        Thread.sleep(5000);
+
+        int product = 1;
+        for (String results : searchProductsPage.getSearchResults()) {
+            String lower = results.toLowerCase();
+            // Accept results that reference Air, Max, the model number 90, or the combined phrase
+            Assert.assertTrue(
+                    lower.contains("air") || lower.contains("max") || lower.contains("90") || lower.contains("air max"),
+                    "Product: " + product + " does not look related to 'Nike Air Max 90' -> '" + results + "'"
+            );
+            product++;
+        }
+    }
+
+
+
+
 
 
 }
