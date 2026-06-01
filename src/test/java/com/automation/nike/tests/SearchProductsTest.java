@@ -322,6 +322,166 @@ public class SearchProductsTest extends BaseTest{
             product++;
         }
     }
+    @Test
+    public void SearchProductsHatsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Hats");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue((lower.contains("hat") || lower.contains("hats") || lower.contains("caps") || lower.contains("beanie")),
+                    "Product: " + product + " does not contain Hats");
+            product++;
+        }
+    }
+    @Test
+    public void SearchProductsRunningShoeTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Running Shoes");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue((lower.contains("running") || lower.contains("run") || lower.contains("shoe") || lower.contains("shoes")),
+                    "Product: " + product + " does not contain Running Shoes");
+            product++;
+        }
+    }
+
+    @Test
+    public void SearchProductsSlidesTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Slides");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue((lower.contains("slide") || lower.contains("slides")),
+                    "Product: " + product + " does not contain Slides");
+            product++;
+        }
+    }
+
+    @Test
+    public void SearchProductsReactTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("React");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue(lower.contains("react"),
+                    "Product: " + product + " does not contain React");
+            product++;
+        }
+    }
+
+    @Test
+    public void SearchProductsMetconTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Metcon");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue(lower.contains("metcon"),
+                    "Product: " + product + " does not contain Metcon");
+            product++;
+        }
+    }
+
+    @Test
+    public void SearchProductsGolfShoesTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Golf Shoes");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue((lower.contains("golf") || lower.contains("golf shoe") || lower.contains("golf shoes")),
+                    "Product: " + product + " does not contain Golf Shoes");
+            product++;
+        }
+    }
+
+    @Test
+    public void SearchProductsSandalsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Sandals");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue((lower.contains("sandal") || lower.contains("sandals")),
+                    "Product: " + product + " does not contain Sandals");
+            product++;
+        }
+    }
+
+    @Test
+    public void SearchProductsSportsBraTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Sports Bra");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue((lower.contains("sports bra") || lower.contains("bra")),
+                    "Product: " + product + " does not contain Sports Bra");
+            product++;
+        }
+    }
+
+    @Test
+    public void SearchProductsYogaPantsTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Yoga Pants");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue((lower.contains("yoga") || lower.contains("pants") || lower.contains("leggings")),
+                    "Product: " + product + " does not contain Yoga Pants");
+            product++;
+        }
+    }
+
+    @Test
+    public void SearchProductsKidsShoesTest() throws InterruptedException {
+        searchProductsPage = new SearchProductsPage(driver);
+        searchProductsPage.searchProducts("Kids Shoes");
+
+        Thread.sleep(5000);
+
+        int product = 1;
+        for(String results : searchProductsPage.getSearchResults()){
+            String lower = results.toLowerCase();
+            Assert.assertTrue((lower.contains("kids") || lower.contains("children") || lower.contains("grade school")),
+                    "Product: " + product + " does not contain Kids Shoes");
+            product++;
+        }
+    }
+
+
 
 
 
