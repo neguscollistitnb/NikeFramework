@@ -14,7 +14,7 @@ public class SearchProductsTest extends BaseTest {
     @DataProvider(name = "productSearches", parallel = false)
     public Object[][] productSearches() {
         return new Object[][]{
-                // query, expected keywords (any-match), requireAll (true means EVERY keyword must appear in each result)
+                // existing entries...
                 {"Jordan", new String[]{"jordan"}, false},
                 {"Air Max", new String[]{"air max", "air", "max"}, false},
                 {"Dunk", new String[]{"dunk"}, false},
@@ -30,13 +30,11 @@ public class SearchProductsTest extends BaseTest {
                 {"Socks", new String[]{"socks", "sock"}, false},
                 {"Hoodies", new String[]{"hoodie", "hoodies", "fleece", "jacket"}, false},
                 {"Leggings", new String[]{"leggings", "flared", "paneled"}, false},
-                // These two originally were asserting both tokens; keep requireAll = true to preserve that strictness
                 {"Women Shorts", new String[]{"women's", "shorts"}, true},
                 {"Men Shorts", new String[]{"men's", "shorts"}, true},
                 {"Men T-Shirts", new String[]{"men's", "t-shirts", "vest", "sweater"}, false},
                 {"Zoom", new String[]{"nike", "zoom"}, false},
                 {"Nike Air Max 90", new String[]{"air", "max", "90", "air max"}, false},
-                // Additional product searches (present in your file)
                 {"Hats", new String[]{"hat", "hats", "caps", "beanie"}, false},
                 {"Running Shoes", new String[]{"running", "run", "shoe", "shoes"}, false},
                 {"Slides", new String[]{"slide", "slides"}, false},
@@ -46,7 +44,19 @@ public class SearchProductsTest extends BaseTest {
                 {"Sandals", new String[]{"sandal", "sandals"}, false},
                 {"Sports Bra", new String[]{"sports bra", "bra"}, false},
                 {"Yoga Pants", new String[]{"yoga", "pants", "leggings"}, false},
-                {"Kids Shoes", new String[]{"kids", "children", "grade school"}, false}
+                {"Kids Shoes", new String[]{"kids", "children", "grade school"}, false},
+
+                // 10 new product searches added:
+                {"Basketball Shoes", new String[]{"basketball", "basketball shoe", "basketball shoes"}, false},
+                {"Trail Running Shoes", new String[]{"trail", "trail running", "trail shoe", "trail shoes"}, false},
+                {"Windbreaker", new String[]{"windbreaker", "wind breaker", "shell"}, false},
+                {"Base Layer", new String[]{"base layer", "thermal", "compression"}, false},
+                {"Cross Trainers", new String[]{"cross trainer", "cross trainers", "training shoe"}, false},
+                {"Compression Shorts", new String[]{"compression shorts", "compression"}, false},
+                {"Swimwear", new String[]{"swimwear", "swim", "swimsuit", "swim shorts"}, false},
+                {"Skate Shoes", new String[]{"skate", "skate shoe", "skate shoes"}, false},
+                {"Workout Tops", new String[]{"workout top", "workout tops", "training top", "tank"}, false},
+                {"Compression Tights", new String[]{"compression tights", "tights", "compression"}, false}
         };
     }
 
