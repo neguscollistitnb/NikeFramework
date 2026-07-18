@@ -5,7 +5,7 @@ import com.automation.nike.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CyberMondayTest  extends  BaseTest{
+public class CyberMondayTests extends  BaseTest{
 
     HomePage homePage;
     CyberMondayPage cyberMondayPage;

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class SearchProductsTest extends BaseTest {
+public class SearchProductsTests extends BaseTest {
 
     private SearchProductsPage searchProductsPage;
 
