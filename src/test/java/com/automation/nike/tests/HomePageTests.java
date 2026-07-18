@@ -5,7 +5,7 @@ import com.automation.nike.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HomePageTest extends BaseTest {
+public class HomePageTests extends BaseTest {
 
     HomePage homePage;
 

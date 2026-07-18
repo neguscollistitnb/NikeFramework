@@ -4,7 +4,7 @@ import com.automation.nike.pages.BackToSchoolPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BackToSchoolTest extends BaseTest{
+public class BackToSchoolTests extends BaseTest{
 
 BackToSchoolPage  backToSchoolPage;
 
