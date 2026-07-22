@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Test Suite" verbose="2">
+    <test name="Status Tests">
+        <classes>
+            <class name="com.automation.nike.api.tests.StatusTests"/>
+        </classes>
+    </test>
+
+    <test name="Authentication Tests">
+        <classes>
+            <class name="com.automation.nike.api.tests.AuthenticationTests"/>
+        </classes>
+    </test>
+
+    <test name="Books Tests">
+        <classes>
+            <class name="com.automation.nike.api.tests.BooksTests"/>
+        </classes>
+    </test>
+
+    <test name="Orders Tests">
+        <classes>
+            <class name="com.automation.nike.api.tests.OrdersTests"/>
+        </classes>
+    </test>
+</suite>
